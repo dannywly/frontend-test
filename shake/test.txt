@@ -1,0 +1,4 @@
+{
+	name:'danny',
+	sex: 'male'
+}
