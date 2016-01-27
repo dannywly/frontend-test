@@ -2,20 +2,88 @@
 <html>
 <head>
 	<title></title>
-	<script scr='../jquery.min.js'></script>
+	<script src='../jquery.min.js'></script>
+	<script src='svg.js'></script>
+	<link rel="stylesheet" type="text/css" href="svg.css">
 </head>
 <body>
+	<svg width="100%" height="200" version="1.1"
+		xmlns="http://www.w3.org/2000/svg">
+
+		<g transform="translate(100,100)"> 
+		<text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:24; visibility:hidden"> It's SVG!
+		<set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="5s" fill="freeze"/>
+		<animateMotion path="M 0 0 L 100 100" begin="1s" dur="5s" fill="freeze"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="5s" fill="freeze"/> 
+		<animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="5s" fill="freeze"/> 
+		</text> 
+		</g> 
+	</svg>
 	<!-- svg图形一开申明命名空间 -->
-	<svg xmlns='http://www.w3.org/200svg' viewBox='0 0 1000 1000'>
+	<svg xmlns='http://www.w3.org/200svg' width='100' height='100' ><!-- 图形的坐标系 -->
+	<!--设置后面要 用到的一些定义 -->
 		<defs>
+			<!--将一种渐变色命名为fade -->
 	    	<linearGradient id='fade'>
 	        	<stop offset='0%' stop-color='#008' />
 	            <stop offset='100%' stop-color='#ccf' />
 	        </linearGradient>
 	    </defs>
-		<rect x='100' y='200' width='800' height='600' stroke='black' stroke-width='25' fill='url(#fade)'/>
+	    <!--画一个具有宽的黑色边框并且渐变色为填充色的矩形 -->
+		<rect x='0' y='0' width='100' height='100' stroke='black' stroke-width='5' fill='url(#fade)'/>
+	</svg>
+	<hr/>
+	This is a read square:
+	<svg xmlns='http://www.w3.org/1999/xhtml' xmlns:svg='http://www.w3.org/2000/svg' width='10' height='10'>
+	    <!--画一个具有宽的黑色边框并且渐变色为填充色的矩形 -->
+		<rect x='0' y='0' width='10' height='10' fill='red'/>
+	</svg>
+	This is a blue circle:
+	<svg xmlns='http://www.w3.org/1999/xhtml' xmlns:svg='http://www.w3.org/2000/svg' width='10' height='10'>
+	    <!--画一个具有宽的黑色边框并且渐变色为填充色的矩形 -->
+		<circle cx='5' cy='5' r='5' fill='red'/>
+	</svg>
+
+
+	<svg id='clock'  width='500' height='500'>
+	    <defs>
+	    	<filter id='shadow' x='-50%' y='-50%' width='200%' height='200%'>
+	    		<feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+	    		<feOffset in='blur' dx='1' dy='1' result='shadow' />
+	    		<feMerge>
+	    			<feMergeNode in='SourceGraphic'/>
+	    			<feMergeNode in='shadow'/>
+	    		</feMerge>
+	    	</filter>
+		</defs>
+		<circle id='face' cx='50' cy='50' r='45' />
+		<g id='ticks'>
+			<line x1='50' y1='5.000' x2='50.00' y2='10.00'/>
+			<line x1='72.50' y1='11.03' x2='70.00' y2='15.36'/>
+			<line x1='88.97' y1='27.50' x2='84.64' y2='30.00'/>
+			<line x1='95.00' y1='50.00' x2='90.00' y2='50.00'/>
+			<line x1='88.97' y1='72.50' x2='84.64' y2='70.00'/>
+			<line x1='72.50' y1='88.97' x2='70.00' y2='84.64'/>
+			<line x1='50.00' y1='95.00' x2='50.00' y2='90.00'/>
+			<line x1='27.50' y1='88.97' x2='30.00' y2='84.64'/>
+			<line x1='11.03' y1='72.50' x2='15.36' y2='70.00'/>
+			<line x1='5.000' y1='50.00' x2='10.00' y2='50.00'/>
+			<line x1='11.03' y1='27.50' x2='15.36' y2='30.00'/>
+			<line x1='27.50' y1='11.03' x2='30.00' y2='15.36'/>
+		</g>
+		<g id='numbers'>
+			<text x='50' y='18'>12</text>
+			<text x='85' y='53'>3</text>
+			<text x='50' y='88'>6</text>
+			<text x='15' y='53'>9</text>
+		</g>
+		<g id='hands' filter='url(#shadow)'>
+			<line id='hourhand' x1='50' y1='50' x2='50' y2='24' />
+			<line id='minuthand' x1='50' y1='50' x2='50' y2='20' />
+		</g>
 
 	</svg>
+	
 
 </body>
 </html>

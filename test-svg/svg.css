@@ -1,0 +1,25 @@
+#clock {
+	stroke: black;
+	stroke-linecap: round;
+	fill: #eef;
+}
+#face {
+	stroke-width: 3px;
+}
+#ticks {
+	stroke-width: 2px;
+}
+#hourhand {
+	stroke-width: 5px;
+}
+#minuthand {
+	stroke-width: 3px;
+}
+#numbers {
+	font-family: sans-serif;
+	font-size: 7pt;
+	font-weight: bold;
+	text-anchor: middle;
+	stroke: none;
+	fill: black;
+}
