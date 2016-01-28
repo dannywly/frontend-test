@@ -91,7 +91,8 @@
 
 	function clock() {
 		var now = new Date();
-		var min = now.getMinutes();
+		// var min = now.getMinutes();
+		var min = now.getSeconds();
 		var hour = (now.getHours()%12) + min/60;
 		var minangle = min*6;
 		var hourangle = hour*30;
@@ -101,12 +102,16 @@
 
 		minhand.setAttribute('transform', 'rotate(' + minangle + ',50,50)');
 		hourhand.setAttribute('transform', 'rotate(' + hourangle + ',50,50)');
-		setTimeout(clock, 60000);
+		setTimeout(clock, 1000);
 		// setInterval(function(){
 		// 	alert(111);
 		// }, 2000);
 	}
 
 	clock();
+
+	$('#btn').click(function() {
+		console.log("it's not block");
+	});
 
 });
