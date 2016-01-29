@@ -185,5 +185,6 @@ $(function() {
         var clear = new cookieStorage();
         clear.clear();
     });
+    $('input.date').datepicker();
     //========================================================================//
 })
