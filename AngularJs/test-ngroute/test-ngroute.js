@@ -3,6 +3,10 @@ angular.module('app', ['ngRoute'])
   $scope.a = 1;
   $scope.b = 2;
   $scope.c = $scope.a + $scope.b;
+  $scope.today = new Date();
+  $scope.change = function() {
+    location.href = 'http://www.baidu.com';
+  }
 })
 //服务$routeParams保存了地址栏中的参数，例如{id : 1, name : 'tom'}
 .controller('MainController', function($scope, $route, $routeParams, $location) {
