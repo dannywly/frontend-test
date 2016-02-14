@@ -239,4 +239,41 @@
     // 触发message事件
     a.fireEvent('message', '这是参数……');
     //============================================================================================================================
+    
+    //============================================================================================================================
+    /*
+    use jquery to define custom event.
+     */
+
+    $('#soda').on('fizz', function() {
+        console.log(this.id + ' emitted fizz');
+    });
+    $('#soda').trigger('fizz');
+
+    var d = document.getElementById("msg");
+
+    d.addEventListener('propertychange',function() {
+        console.log(this.id);
+    },false);
+
+    d.addEventListener('input',function() {
+        console.log(this.id);
+    },false);
+
+    d.addEventListener('change',function() {
+        console.log(this.id);
+    },false);
+
+    $('#change').click(function(e) {
+        d.setAttribute('value', 'hel');
+    });
+
+    $('#msg').bind('DOMAttrModified', function() {
+        console.log(this.id + ' emitted fizz');
+    });
+    //在firefox,opera中有效,在chrome中没有用
+    document.addEventListener('DOMNodeInserted',function(){alert(1)},false);
+    d.addEventListener('DOMAttrModified',function(){alert(2)},false);
+    document.addEventListener('DOMNodeRemoved',function(){alert(3)},false);
+    //============================================================================================================================
 })
