@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test ng-bind</title>
+	<script src='../angular.js'></script>
+	<script src='../angular-sanitize.js'></script>
+	<script src='test-ngbind.js'></script>
+</head>
+<body ng-app='app'>
+	<div ng-controller="ExampleController">
+	  Enter name: <input type="text" ng-model="name"><br>
+	  <!-- as attribute -->
+	  Hello <span ng-bind="name"></span>!
+	  <!-- as CSS class -->
+	  <span class='ng-bind: name;'></span>
+	</div>
+	
+	<!-- ng-bind-template -->
+	<div ng-controller="ctr1">
+	 Salutation: <input type="text" ng-model="salutation"><br>
+	 Name: <input type="text" ng-model="name"><br>
+	 <!-- ng-bind-template can contain {{ }} expression but ng-bind cannot -->
+	 <pre ng-bind-template="{{salutation}} {{name}}!"></pre>
+	</div>
+	
+	<!-- ng-bind-template -->
+	<div ng-controller="ctr2">
+	 <p ng-bind-html="myHTML"></p>
+	</div>
+</body>
+</html>

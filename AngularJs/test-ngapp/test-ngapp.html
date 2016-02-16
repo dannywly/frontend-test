@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test ngBind</title>
+	<script src='../angular.js'></script>
+	<script src='test-ngapp.js'></script>
+</head>
+<!-- if ng-app directive were not define the html will not be compile -->
+<body ng-app="ngAppDemo">
+	<div ng-controller="ngAppDemoController">
+	  I can add: {{a}} + {{b}} =  {{ a+b }}
+	</div>
+</body>
+</html>
