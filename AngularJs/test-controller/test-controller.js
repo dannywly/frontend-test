@@ -1,5 +1,12 @@
-angular.module('app', []).controller('SettingsController1', settings)
+angular.module('app', [])
+	.controller('SettingsController1', settings)
 	.controller('ctr2', ['$scope', Ctr2])
+	.controller('ctr3', ['$scope', Ctr3])
+	.filter('greet', function() {
+		return function(name) {
+			return 'hello, ' + name + ' !';
+		}
+	})
 ;
 
 /**
@@ -40,4 +47,8 @@ function Ctr2($scope) {
 	$scope.a = 3;
 	$scope.b = 5;
 	$scope.c = $scope.a + $scope.b;
+}
+
+function Ctr3($scope) {
+	
 }
