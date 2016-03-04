@@ -1,0 +1,34 @@
+<modification>
+	<id>Enable the single account login both store and dashboard></id>
+	<version>2.1.0.2</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Alan Zhang</author>
+	<file path="catalog/controller/common/" name="header.php">
+		<!--Add admin user when customer register -->
+		<operation>
+			<search position="after">
+				<![CDATA[$data['text_all'] = $this->language->get('text_all');]]>
+			</search>
+			<add>
+				<![CDATA[
+					$data['text_dashboard'] = $this->language->get('text_dashboard');
+				]]>
+			</add>
+		</operation>
+
+		<operation>
+			<search position="after">
+				<![CDATA[$data['telephone'] = $this->config->get('config_telephone');]]>
+			</search>
+			<add>
+				<![CDATA[
+					if (isset($this->session->data['token'])) {
+						$data['dashboard'] = 'admin/index.php?route=common/dashboard&token='.$this->session->data['token'];
+					} else {
+						$data['dashboard'] = 0;
+					}
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>

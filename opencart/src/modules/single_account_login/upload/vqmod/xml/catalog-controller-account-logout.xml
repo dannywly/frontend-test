@@ -1,0 +1,19 @@
+<modification>
+	<id>Enable the single account login both store and dashboard</id>
+	<version>2.1.0.2</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Alan Zhang</author>
+	<file path="catalog/controller/account/" name="logout.php">
+		<operation>
+			<search position="after">
+				<![CDATA[unset($this->session->data['vouchers']);]]>
+			</search>
+			<add>
+				<![CDATA[
+					$this->user->logout();
+					unset($this->session->data['token']);
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>
