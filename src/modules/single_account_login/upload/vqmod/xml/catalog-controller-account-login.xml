@@ -1,0 +1,20 @@
+<modification>
+	<id>Enable the single account login both store and dashboard</id>
+	<version>2.1.0.2</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Alan Zhang</author>
+	<file path="catalog/controller/account/" name="login.php">
+		<operation>
+			<search position="after">
+				<![CDATA[$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);]]>
+			</search>
+			<add>
+				<![CDATA[
+					if ($this->user->login($this->request->post['email'], html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8'))){
+						$this->session->data['token'] = token(32);
+					}
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>

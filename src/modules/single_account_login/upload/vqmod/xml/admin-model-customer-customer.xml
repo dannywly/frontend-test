@@ -1,0 +1,18 @@
+<modification>
+	<id>Enable the single account login both store and dashboard></id>
+	<version>2.1.0.2</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Alan Zhang</author>
+	<file path="admin/model/customer/" name="customer.php">
+		<operation>
+			<search position="after" offset="1">
+				<![CDATA[$this->db->query("UPDATE " . DB_PREFIX . "customer SET approved = '1' WHERE customer_id = '" . (int)$customer_id . "'");]]>
+			</search>
+			<add>
+				<![CDATA[
+					$this->db->query("UPDATE " . DB_PREFIX . "user SET status = '1' WHERE username = '" . $this->db->escape($customer_info['email']) . "'");
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>

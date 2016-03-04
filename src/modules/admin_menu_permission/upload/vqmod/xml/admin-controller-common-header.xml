@@ -1,0 +1,77 @@
+<modification>
+    <id>Add permission on header.php</id>
+    <version>2.x-1.0</version>
+    <vqmver>2.4.1</vqmver>
+    <author>danny.wang</author>
+
+    <file name="admin/controller/common/header.php">
+        <operation>
+            <search position="before"><![CDATA[
+                foreach ($results as $result) {
+            ]]></search>
+            <add><![CDATA[
+                if (isset($this->user->getPermissions()['access'])) {
+                    $data['permissions'] = $this->user->getPermissions()['access'];
+                } else {
+                    $data['permissions'] = array();
+                }
+
+                $data['show_sale_order'] = $this->is_in_permission('sale/order', $data['permissions']);
+                $data['show_sale_return'] = $this->is_in_permission('sale/order', $data['permissions']);
+                $data['show_sale'] = $data['show_sale_return'] || $data['show_sale_order'];
+
+                $data['show_report_customer_online'] = $this->is_in_permission('report/customer_online', $data['permissions']);
+                $data['show_customer'] = $this->is_in_permission('customer/customer', $data['permissions']);
+                $data['show_customer_list'] = $data['show_customer'] || $data['show_report_customer_online'];
+
+                $data['show_catelog_product'] = $this->is_in_permission('catalog/product', $data['permissions']);
+                $data['show_catelog_review'] = $this->is_in_permission('catalog/review', $data['permissions']);
+                $data['show_catelog'] = $data['show_catelog_product'] || $data['show_catelog_review'];
+
+                $data['show_marketing_affiliate'] = $this->is_in_permission('marketing/affiliate', $data['permissions']);
+
+                $data['show_alert'] = $data['show_sale'] || $data['show_customer_list'] || $data['show_catelog'] || $data['show_marketing_affiliate'];
+                $total = 0;
+
+                if ($data['show_sale']) {
+                    if ($data['show_sale_return']) {
+                        $total += $return_total;
+                    }
+                    $data['alerts'] = $customer_total + $product_total + $review_total + $return_total + $affiliate_total;
+                }
+                if ($data['show_customer_list']) {
+                    if ($data['show_customer']) {
+                        $total += $customer_total;
+                    }
+                }
+                if ($data['show_catelog']) {
+                    if ($data['show_catelog_product']) {
+                        $total += $product_total;
+                    }
+                    if ($data['show_catelog_review']) {
+                        $total += $review_total;
+                    }
+                }
+                if ($data['show_marketing_affiliate']) {
+                    $total += $affiliate_total;
+                }
+                $data['alerts'] = $total;
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/controller/common/header.php">
+        <operation>
+            <search position="before"><![CDATA[
+                public function index() {
+            ]]></search>
+            <add><![CDATA[
+                public function is_in_permission($val, $permissions) {
+                    if (in_array($val, $permissions)) {
+                        return true;
+                    }
+                    return false;
+                }
+            ]]></add>
+        </operation>
+    </file>
+</modification>

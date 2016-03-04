@@ -1,0 +1,20 @@
+<modification>
+	<id>Enable the single account login both store and dashboard></id>
+	<version>2.1.0.2</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Alan Zhang</author>
+	<file path="admin/controller/common/" name="login.php">
+		<operation>
+			<search position="replace" offset="1">
+				<![CDATA[$this->error['warning'] = $this->language->get('error_login');]]>
+			</search>
+			<add>
+				<![CDATA[
+					} else {
+						$this->customer->login($this->request->post['username'], $this->request->post['password']);
+					}
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>
