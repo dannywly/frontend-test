@@ -1,0 +1,2 @@
+<?php
+$permission = new Permission();
