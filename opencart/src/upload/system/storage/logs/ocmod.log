@@ -1,0 +1,396 @@
+2016-03-04 9:52:39 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:08:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:08:21 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:09:32 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:09:43 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:12:18 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:12:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:12:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:12:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:12:20 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
+2016-03-04 10:46:11 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.php'
+Modification::refresh - Done 'Add permission on header.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.php with menu-role.php'
+Modification::refresh - Done 'Replace menu.php with menu-role.php'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add permission on header.tpl'
+Modification::refresh - Done 'Add permission on header.tpl'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Replace menu.tpl with menu-role.xml'
+Modification::refresh - Done 'Replace menu.tpl with menu-role.xml'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Bugfixes for ControllerUserUserPermission'
+Modification::refresh - Done 'Bugfixes for ControllerUserUserPermission'
+----------------------------------------------------------------
+Modification::refresh - Processing 'Add function of getPermissions'
+Modification::refresh - Done 'Add function of getPermissions'
+----------------------------------------------------------------
