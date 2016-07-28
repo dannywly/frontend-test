@@ -1,0 +1,216 @@
+<modification>
+    <id>Replace menu.php with menu-role.php</id>
+    <version>2.x-1.0</version>
+    <vqmver>2.4.1</vqmver>
+    <author>danny.wang</author>
+
+    <file name="admin/controller/common/menu.php">
+        <operation info="Add array to cache permissions">
+            <search position="before"><![CDATA[
+                return $this->load->view('common/menu.tpl', $data);
+            ]]></search>
+            <add><![CDATA[
+                //catalog------------------------------------
+                $data['data_catalog'] = array(
+                    'catalog/category' => 'text_category', 
+                    'catalog/download' => 'text_download',
+                    'catalog/filter' => 'text_filter',
+                    'catalog/information' => 'text_information',
+                    'catalog/manufacturer' => 'text_manufacturer',
+                    'catalog/option' => 'text_option',
+                    'catalog/product' => 'text_product',
+                    'catalog/review' => 'text_review',
+                    'catalog/recurring' => 'text_recurring',
+                    'text_attribute' => array(
+                                'catalog/attribute' => 'text_attribute',
+                                'catalog/attribute_group' => 'text_attribute_group'
+                                )
+                );
+                //extension------------------------------------
+                $data['data_extension'] = array(
+                    'extension/installer' => 'text_installer',
+                    'extension/modification' => 'text_modification',
+                    'extension/analytics' => 'text_analytics',
+                    'extension/captcha' => 'text_captcha',
+                    'extension/feed' => 'text_feed',
+                    'extension/fraud' => 'text_fraud',
+                    'extension/module' => 'text_module',
+                    'extension/payment' => 'text_payment',
+                    'extension/shipping' => 'text_shipping',
+                    'extension/total' => 'text_total'
+                );
+                //design------------------------------------
+                $data['data_design'] = array(
+                    'design/layout' => 'text_layout',
+                    'design/banner' => 'text_banner'
+                );
+                //sale------------------------------------
+                $data['data_sale'] = array(
+                    'sale/return' => 'text_return',
+                    'sale/order' => 'text_order',
+                    'sale/recurring' => 'text_order_recurring',
+                    'text_voucher' => array(
+                        'sale/voucher' => 'text_voucher',
+                        'sale/voucher_theme' => 'text_voucher_theme'
+                        ),
+                    'text_paypal' => array(
+                        'payment/pp_express' => 'text_paypal_search'
+                        )
+                );
+                //customers------------------------------------
+                $data['data_customers'] = array(
+                    'customer/customer' => 'text_customer',
+                    'customer/customer_group' => 'text_customer_group',
+                    'customer/custom_field' => 'text_custom_field'
+                );
+                //marketing------------------------------------
+                $data['data_marketing'] = array(
+                    'marketing/marketing' => 'text_marketing',
+                    'marketing/affiliate' => 'text_affiliate',
+                    'marketing/coupon' => 'text_coupon',
+                    'marketing/contact' => 'text_contact'
+                );
+                //system------------------------------------
+                $data['data_system_setting'] = array(
+                    'setting/store' => 'text_setting',
+                    'text_users' => array(
+                        'user/user' => 'text_user',
+                        'user/user_permission' => 'text_user_group',
+                        'user/api' => 'text_api'
+                    ),
+                    'text_localisation' => array(
+                        'localisation/location' => 'text_location',
+                        'localisation/language' => 'text_language',
+                        'localisation/currency' => 'text_currency',
+                        'localisation/stock_status' => 'text_stock_status',
+                        'localisation/order_status' => 'text_order_status',
+                        'text_return' => array(
+                            'localisation/return_status' => 'text_return_status',
+                            'localisation/return_action' => 'text_return_action',
+                            'localisation/return_reason' => 'text_return_reason'
+                        ),
+                        'localisation/country' => 'text_country',
+                        'localisation/zone' => 'text_zone',
+                        'localisation/geo_zone' => 'text_geo_zone',
+                        'text_tax' => array(
+                            'localisation/tax_class'  => 'text_tax_class',
+                            'localisation/tax_rate' => 'text_tax_rate'
+                        ),
+                        'localisation/length_class' => 'text_length_class',
+                        'localisation/weight_class' => 'text_weight_class'
+                    ),
+                    'text_tools' => array(
+                        'tool/upload' => 'text_upload',
+                        'tool/backup' => 'text_backup',
+                        'tool/error_log' => 'text_error_log'
+                    )
+                );
+                //reports------------------------------------
+                $data['data_report'] = array(
+                    'text_sale' => array(
+                        'report/sale_order' => 'text_report_sale_order',
+                        'report/sale_tax' => 'text_report_sale_tax',
+                        'report/sale_shipping' => 'text_report_sale_shipping',
+                        'report/sale_return' => 'text_report_sale_return',
+                        'report/sale_coupon' => 'text_report_sale_coupon'
+                    ),
+                    'text_product' => array(
+                        'report/product_viewed' => 'text_report_product_viewed',
+                        'report/product_purchased' => 'text_report_product_purchased'
+                    ),
+                    'text_customer' => array(
+                        'report/customer_online' => 'text_report_customer_online',
+                        'report/customer_activity' => 'text_report_customer_activity',
+                        'report/customer_order' => 'text_report_customer_order',
+                        'report/customer_reward' => 'text_report_customer_reward',
+                        'report/customer_credit' => 'text_report_customer_credit'
+                    ),
+                    'text_marketing' => array(
+                        'report/marketing' => 'text_marketing',
+                        'report/affiliate' => 'text_report_affiliate',
+                        'report/affiliate_activity' => 'text_report_affiliate_activity'
+                    )
+                );
+                if (isset($this->user->getPermissions()['access'])) {
+                    $data['permissions'] = $this->user->getPermissions()['access'];
+                } else {
+                    $data['permissions'] = array();
+                }
+                //show menu or not
+                $data['show_catalog'] = $this->is_in_permission($data['data_catalog'], $data['permissions']);
+                $data['show_extension'] = $this->is_in_permission($data['data_extension'], $data['permissions']);
+                $data['show_design'] = $this->is_in_permission($data['data_design'], $data['permissions']);
+                $data['show_sale'] = $this->is_in_permission($data['data_sale'], $data['permissions']);
+                $data['show_customers'] = $this->is_in_permission($data['data_customers'], $data['permissions']);
+                $data['show_marketing'] = $this->is_in_permission($data['data_marketing'], $data['permissions']);
+                $data['show_system'] = $this->is_in_permission($data['data_system_setting'], $data['permissions']);
+                $data['show_report'] = $this->is_in_permission($data['data_report'], $data['permissions']);
+                
+                //menu's html
+                $data['catalog_html'] = $this->simpleGetHtml($data['data_catalog'], $data['permissions']);
+                $data['extension_html'] = $this->simpleGetHtml($data['data_extension'], $data['permissions']);
+                $data['design_html'] = $this->simpleGetHtml($data['data_design'], $data['permissions']);
+                $data['sale_html'] = $this->simpleGetHtml($data['data_sale'], $data['permissions']);
+                $data['customers_html'] = $this->simpleGetHtml($data['data_customers'], $data['permissions']);
+                $data['marketing_html'] = $this->simpleGetHtml($data['data_marketing'], $data['permissions']);
+                $data['system_setting_html'] = $this->simpleGetHtml($data['data_system_setting'], $data['permissions']);
+                $data['report_html'] = $this->simpleGetHtml($data['data_report'], $data['permissions']);
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/controller/common/menu.php">
+        <operation>
+            <search position="before"><![CDATA[
+                public function index() {
+            ]]></search>
+            <add><![CDATA[
+                public function getHtml($arrKey, $arrVal, $permissions, $html) {
+                    $show = false;
+                    if(is_array($arrVal)) {
+                        $html = $html.'<li><a class="parent">'.$this->language->get($arrKey).'</a><ul>';
+                        foreach ($arrVal as $key => $value) {
+                            if (is_array($value)) {
+                                $html = $this->getHtml($key, $value, $permissions, $html);
+                            } else {
+                                if (in_array($key, $permissions)) {
+                                    $show = true;
+                                    $html = $html.'<li><a href="'.$this->url->link($key, 'token=' . $this->session->data['token'], 'SSL').'">'.$this->language->get($value).'</a></li>';
+                                }
+                            }
+                        }
+                        $html = $html.'</ul></li>';
+                    } elseif (in_array($arrKey, $permissions)) {
+             
+                        $show = true;
+                        $html = $html.'<li><a href="'.$this->url->link($arrKey, 'token=' . $this->session->data['token'], 'SSL').'">'.$this->language->get($arrVal).'</a></li>';
+                    }
+
+                    if ($show) {
+                        return $html;
+                    }
+
+                }
+
+                public function is_in_permission($arr, $permissions) {
+                    foreach ($arr as $key => $value) {
+                        if (is_array($value)) {
+                            return $this->is_in_permission($value, $permissions);
+                        } elseif (in_array($key, $permissions)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                public function simpleGetHtml($ProductArr, $permissions) {
+                    $html = '';
+                    foreach ($ProductArr as $key => $value) {
+                        $html = $html. $this->getHtml($key, $value, $permissions, '');
+                    }
+                    return $html;
+                }
+
+            ]]></add>
+        </operation>
+    </file>
+</modification>
