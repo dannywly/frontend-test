@@ -1,0 +1,8 @@
+p::-moz-selection,
+p::selection { 
+  color: red;
+  background-color: #FFF;
+}
+.example::selection {
+  background-color: red;
+}

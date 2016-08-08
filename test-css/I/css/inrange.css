@@ -1,0 +1,7 @@
+.test-inrange:in-range {
+  border: solid green 2px;
+}
+
+.test-inrange:out-of-range {
+  border: solid red 2px;
+}

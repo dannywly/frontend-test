@@ -1,0 +1,13 @@
+p.note {
+  display: list-item;
+  counter-increment: note-counter;
+  color: red;
+  margin-left: 5em;
+}
+/*
+it's not work.
+ */
+p.note::marker {
+  content: "Note " counter(note-counter) ":";
+  text-align: left;
+}
