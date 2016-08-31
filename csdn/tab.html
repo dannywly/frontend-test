@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>answer tab not worked question</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .box {
+            width: 350px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .mt span {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: pink;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .mb li {
+            width: 100%;
+            height: 270px;
+            background-image: purple;
+            display: none;
+        }
+        .mb li.show {
+            display: block;
+        }
+        .current {
+            background-color: red !important;
+        }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        function tab(obj) {
+            var tvg = document.getElementById(obj);
+            var spans = tvg.getElementsByTagName("span");
+            var lis = tvg.getElementsByTagName('li');
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].index = i;
+                spans[i].onmouseover = function() {
+                    for (var j = 0; j < spans.length; j++) {
+                        spans[j].className = "";
+                        lis[j].className = "";
+                    };
+                    this.className = 'current';
+                    lis[this.index].className = 'show';
+                }
+            };
+        }
+        tab('bo1');
+        tab('bo2');
+        tab('bo3');
+    var  time;  //设置一个全局变量
+    var  n = 3 * 1000;  //时间设置(300秒)
+    time = setTimeout(function(){
+            location.href="https://www.baidu.com";
+            },  n);
+    window.top.document.onmousemove = function() {
+      clearTimeout(time);
+      time  =  setTimeout(function(){
+                location.href="https://www.baidu.com";
+            }, n);
+     }   
+    window.top.document.onkeydown = function() {
+       clearTimeout(time);
+       time  =  setTimeout(function(){
+            location.href="https://www.baidu.com";
+        }, n);
+    }
+    }
+    </script>
+</head>
+<body>
+    <div class="box" id="bo1">
+        <div class="mt">
+            <span class="current">新闻</span>
+            <span>体育</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+        </div>
+        <div class="mb">
+            <ul>
+                <li class="show"><img src="../temp/Desert.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Hydrangeas.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Lighthouse.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Jellyfish.jpg" height="350" width="350"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box" id="bo2">
+        <div class="mt">
+            <span class="current">新闻</span>
+            <span>体育</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+        </div>
+        <div class="mb">
+            <ul>
+                <li class="show"><img src="../temp/Desert.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Hydrangeas.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Lighthouse.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Jellyfish.jpg" height="350" width="350"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box" id="bo3">
+        <div class="mt">
+            <span class="current">新闻</span>
+            <span>体育</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+        </div>
+        <div class="mb">
+            <ul>
+                <li class="show"><img src="../temp/Desert.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Hydrangeas.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Lighthouse.jpg" height="350" width="350"></li>
+                <li><img src="../temp/Jellyfish.jpg" height="350" width="350"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    directive('tabs', function() {
+    return {
+            restrict: 'E', // 表示调用这个自定义指令的时候是以元素的方式例如: <tabs></tabs>
+            transclude: true, //说明自定义指令是否复制原始标记中的内容
+            scope: {},
+            controller: ["$scope", function($scope) {//为什么是数组呢："$scope"该怎么理解呢 => $scope 可以理解为下面template的内容作用域，用数组是因为引用了其他，这里就是$scope
+                var panes = $scope.panes = [];
+                $scope.select = function(pane) {
+                    angular.forEach(panes, function(pane) {
+                        pane.selected = false;
+                    });
+                    pane.selected = true;
+                }
+ 
+                this.addPane = function(pane) {//这里的this该怎么解释，为什么能直接this.addPane呢 =》 使用this共享给其他指令
+                    if(panes.length == 0) $scope.select(pane);
+                    panes.push(pane);
+                }
+            }],
+            template: '<div class="tabbable">' + '<ul class="nav nav-tabs">' + '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">' + '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +  '</li>' + '</ul>' + '<div class="tab-content" ng-transclude></div>' + '</div>',
+            replace: true
+        };
+    }).
+    directive('pane', function() {
+        return {
+            require: '^tabs',//指定tabs指令是pane指令的父级
+            restrict: 'E',
+            transclude: true,
+            scope: {
+                title: '@'
+            },
+            link: function(scope, element, attrs, tabsCtrl) {
+                 
+                tabsCtrl.addPane(scope);//这里为什么传scope参数呢
+            },
+            template: '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +//ng-class="{active: selected}"怎么理解呢
+                '</div>',
+            replace: true
+        };
+    })
+</script>

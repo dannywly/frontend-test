@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>自定义指令间的互相交互</title>
+<script type="text/javascript" src="../angular.js"></script>
+
+</head>
+<body>
+
+<div>
+    <hello>
+        <hi></hi>
+    </hello>
+    <tabs> 
+    <pane title="First Tab"> 
+      <div>This is the content of the first tab.</div> 
+    </pane> 
+    <pane title="Second Tab"> 
+      <div>This is the content of the second tab.</div> 
+    </pane> 
+  </tabs> 
+</div>
+
+<script type="text/javascript">
+
+var m1 = angular.module('myApp',[]);
+
+m1.directive('hello',function(){
+    return {
+        restrict : 'E',
+        replace : true,
+        transclude : true,   //允许自定义指令的嵌套，通过ng-transclude指定嵌套的范围
+        controller : function($scope){
+            $scope.name = 'xiecg';
+            this.name = 'xiecg';    //使用this共享给其他指令
+        },
+        template : '<div>hello angular <h1 ng-transclude></h1></div>'
+    };
+});
+
+m1.directive('hi',function(){
+    return {
+        restrict : 'E',
+        replace : true,
+        require : '^hello',//hello指令属性hi指令的父级，需要用^符号指定。如果无法指定，使用?容错处理。
+        template : '<span>hi angular {{name}}</span>',
+        link : function(scope,element,attr,reController){
+            console.log(reController);    //得到父级hello指令中共享出来的数据
+        }
+    };
+});
+
+m1.directive('tabs', function() {
+    return {
+            restrict: 'E', // 表示调用这个自定义指令的时候是以元素的方式例如: <tabs></tabs>
+            transclude: true, //说明自定义指令是否复制原始标记中的内容
+            scope: {},
+            controller: ["$scope", function($scope) {//为什么是数组呢："$scope"该怎么理解呢 => $scope 可以理解为下面template的内容作用域，用数组是因为引用了其他，这里就是$scope
+                var panes = $scope.panes = [];
+                $scope.select = function(pane) {
+                    angular.forEach(panes, function(pane) {
+                        pane.selected = false;
+                    });
+                    pane.selected = true;
+                }
+ 
+                this.addPane = function(pane) {//这里的this该怎么解释，为什么能直接this.addPane呢 =》 使用this共享给其他指令
+                    if(panes.length == 0) $scope.select(pane);
+                    panes.push(pane);
+                }
+            }],
+            template: '<div class="tabbable">' + '<ul class="nav nav-tabs">' + '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">' + '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +  '</li>' + '</ul>' + '<div class="tab-content" ng-transclude></div>' + '</div>',
+            replace: true
+        };
+    }).
+    directive('pane', function() {
+        return {
+            require: '^tabs',//指定tabs指令是pane指令的父级
+            restrict: 'E',
+            transclude: true,
+            scope: {
+                title: '@'
+            },
+            link: function(scope, element, attrs, tabsCtrl) {
+                 
+                tabsCtrl.addPane(scope);//这里为什么传scope参数呢
+            },
+            template: '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +//ng-class="{active: selected}"怎么理解呢
+                '</div>',
+            replace: true
+        };
+    })
+</script>
+</body>
+</html>
